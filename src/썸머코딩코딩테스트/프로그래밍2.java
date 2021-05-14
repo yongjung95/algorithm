@@ -27,26 +27,18 @@ public class 프로그래밍2 {
             int val = q.peek().value;
             int pri = q.peek().prior;
 
-            System.out.println(q.poll().location);
+            //System.out.println(q.poll().location);
 
             for ( Printer p : q ){
                 if (val < p.value){
                     flag = true;
-                }else if (val == p.value){
-                    if (pri < p.prior){
-                        flag = true;
-                    }else{
-                        flag = false;
-                    }
-                }else{
-                    flag = false;
                 }
             }
 
             if (flag){
-                an.add(q.poll().location);
-            }else {
                 q.offer(q.poll());
+            }else {
+                an.add(q.poll().location);
             }
         }
 

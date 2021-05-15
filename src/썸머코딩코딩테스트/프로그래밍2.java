@@ -30,8 +30,9 @@ public class 프로그래밍2 {
             //System.out.println(q.poll().location);
 
             for ( Printer p : q ){
-                if (val < p.value){
+                if (val < p.value && pri < p.prior){
                     flag = true;
+                    System.out.println("test");
                 }
             }
 
